@@ -12,15 +12,16 @@ close all, clear all
 % num_n : nombre de normales calcules (pour le calcul des isophotes)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-A = Generate_surface(2);
-A
+A = Generate_surface(1);
 
+
+%return
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %BezierSurf = load('surface1');  % read control points
-BezierSurf = load('surface2'); % read control points
-%BezierSurf = load('surface3'); % read control points
+%BezierSurf = load('surface2'); % read control points
+BezierSurf = load('surface3'); % read control points
 %BezierSurf = load('surface4'); % read control points
 %load('teapot'); %loading matrix B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
