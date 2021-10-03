@@ -69,10 +69,10 @@ end
 
 % % ------------------------------------
 % % Normal vectors of Cubic Bezier patches 
-% nu=linspace(0,1,num_n); nv=nu;  %parametrisation uniforme (num_n+1)x (num_n+1) valeurs de parametre
-% for k=1:np
-%   N(:,:,:,k)=bezierPatchNormal(B(:,:,:,k),nu,nv); %vecteurs normal du patch k
-% end
+nu=linspace(0,1,num_n); nv=nu;  %parametrisation uniforme (num_n+1)x (num_n+1) valeurs de parametre
+for k=1:np
+    N(:,:,:,k)=bezierPatchNormal(B(:,:,:,k),nu,nv); %vecteurs normal du patch k
+end
 
 
 % ------------------------------------
