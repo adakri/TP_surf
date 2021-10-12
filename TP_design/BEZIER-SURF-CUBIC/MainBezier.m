@@ -19,13 +19,13 @@ A = Generate_surface(1);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%BezierSurf = load('surface1');  % read control points
+BezierSurf = load('surface1');  % read control points
 %BezierSurf = load('surface2'); % read control points
-BezierSurf = load('surface3'); % read control points
+%BezierSurf = load('surface3'); % read control points
 %BezierSurf = load('surface4'); % read control points
 %load('teapot'); %loading matrix B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-num_p=20;                    % nombre de valeurs de parametre en direction u et v
+num_p=5;                    % nombre de valeurs de parametre en direction u et v
 num_n=20;		     % plus num_p est grand plus la surface paraitra lisse
 			     % et plus le calcul sera long
 
@@ -43,7 +43,7 @@ for k=1:np
     end
   end
 end
-B
+
 
 % La matrice B stocke tous les points de controle de tous les patchs
 % B(:,:,:,k) sont tous les points de controle du patch k
@@ -74,6 +74,7 @@ for k=1:np
     N(:,:,:,k)=bezierPatchNormal(B(:,:,:,k),nu,nv); %vecteurs normal du patch k
 end
 
+N
 
 % ------------------------------------
 % Computing Isophotes
@@ -84,4 +85,4 @@ end
 % ------------------------------------
 % Visualisation d'un patch/surface de Bezier
 %  plotBezierPatch3D(B(:,:,:,2),S(:,:,:,2)) % plot d'un seul patch k
-  plotBezierSurface3D(B,S)		   % plot de tous les np patches
+%  plotBezierSurface3D(B,S)		   % plot de tous les np patches

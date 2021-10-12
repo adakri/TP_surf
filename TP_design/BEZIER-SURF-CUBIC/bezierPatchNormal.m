@@ -1,45 +1,32 @@
-function curve = bezier_curve(P,v)
-  curve = [];
-  %compute bezier curve from a number of points  
-end
-
-
-function  derivative = du(B, u, v)
-  % Compute the derivative in a 16 point patch in points of vectors u and v where size(u)=size(v)
-  % we need the values of bezier coefficients
-  values = bezierPatchEval(B,u,v);
-  points = [];
-  for i=1:length(u):
-    
-  endfor
- end
- 
- function  derivative = dv(B, u, v)
-  % Compute the derivative in a 16 point patch in points of vectors u and v where size(u)=size(v)
-  % we need the values of bezier coefficients
-  values = bezierPatchEval(B,u,v);
-  points = [];
-  for i=1:length(v):
-    
-  endfor
- end
-
-
-
 function Normal_array = bezierPatchNormal(P, u, v)
   %
   %Compute the value in the points
-  derivative_u = du(B,u,v);
-  derivative_v = dv(B,u,v);
-  Normal_array = [];
-  Normals = cross(derivative_u,derivative_v);
+  derivative_u = []
+  derivative_v = []
   
-  for i=1:length(u):
-    for j=1:length(v):
-      Normals(i,j,:) = Normals(i,j,:) / norm(Normals(i,j,:)); 
+  %du(P,u(1),v(1));
+  
+  %error("conscious")
+  Normal_array = [];
+
+  for i=1:length(u)
+    for j=1:length(v)
+      disp("***");
+      %dv(P,u(i),v(j))
+      %du(P,u(i),v(j))
+      Normal_array(i,j,:) = [cross( du(P,u(i),v(j)), dv(P,u(i),v(j)) )];
     endfor
   endfor
+  %Normal_array
+  %error("conscious")
+  %derivative_u
+  %derivative_v
   
-  Normal_array = Normals;
-  
+  for i=1:length(u)
+    for j=1:length(v)
+      Normal_array(i,j,:) = Normal_array(i,j,:) ./ sqrt(Normal_array(i,j,1)^2 + Normal_array(i,j,2)^2 + Normal_array(i,j,3)^2); 
+      Normal_array(i,j,:)
+    endfor
+  endfor
+    
   end
